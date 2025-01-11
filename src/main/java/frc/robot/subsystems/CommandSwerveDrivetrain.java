@@ -101,6 +101,7 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
             state -> SignalLogger.writeString("SysIdRotation_State", state.toString())
         ),
         new SysIdRoutine.Mechanism(
+            
             output -> {
                 /* output is actually radians per second, but SysId only supports "volts" */
                 setControl(m_rotationCharacterization.withRotationalRate(output.in(Volts)));
